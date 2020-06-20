@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+    <link rel="icon" href=
+            "{{ url_for('static',filename='images/logo.jpeg') }}"
+          type="image/x-icon"><style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 15px;
+        left: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 1px;
+        border-radius: 0px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
+    .flex-box-containeer-2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .flex-box-containeer-2 img {
+        margin: 10px;
+        max-width: 10%;
+        max-height: 10%;
+        box-shadow: 0px 10px 20px black;
+    }
+
+</style>
+
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img
+        src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
+<div class="super_container">
+
+    <!-- Header -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                        <a href="/main">
+                            <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+                                    src="/static/images/logo2.jpeg" alt="">
+                                <div>GYMA<span>ale</span></div>
+                            </div>
+                        </a>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </nav>
+                        <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <div>9999999999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hamburger -->
+
+    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+        <div class="hamburger">
+            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+                <span>menu</span>
+                <div class="hamburger_container">
+                    <div class="menu_hamburger">
+                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+
+    <div class="menu trans_800">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            <ul>
+                <li><a href="/main">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span>9999999999</span>
+        </div>
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
+        <div class="overlay"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_title">Gyms</div>
+                            <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+
+    <!-- Services -->
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container">
+                        <div class="section_subtitle"></div>
+                        <div class="section_title">{{ g_names.gym_name }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="services_row">
+                <h3>Established in {{ g_names.estlb }}</h3>
+                <h3><u>A:</u> {{ g_names.address_1 }} <br>{{ g_names.address_2 }}<br></h3>
+                <h4> {{ g_names.city }}-{{ g_names.postal_code }}</h4>
+                <h4>{{ g_names.state }}</h4>
+                <br>
+                <h3><u>M:</u> {{ g_names.contact_number }}</h3>
+                <h3><u>Fees:</u></h3>
+                <h4>{{ g_names.monthly_fees }}/- pre month</h4>
+                <h4>{{ g_names.yearly_fees }}/- per year</h4>
+                {% if g_names.trainers_available=="Yes" %}
+                <h4>Trainers are available!!</h4>
+                {% endif %}
+                {% if g_names.trainers_available!="Yes" %}
+                <h4>Trainers are not available!!</h4>
+                {% endif %}
+                <h4><u>Features:</u></h4>
+                <h4>{{ g_names.features }}</h4>
+                <h4><u>Description:</u>
+                    <p>{{ g_names.desc }}</p></h4>
+                <h3><u>Timings:</u></h3>
+                <h4>Morning: {{ g_names.m_open }}:00 am to {{ g_names.m_close }}:00 am</h4>
+                <h4>Evening: {{ g_names.e_open }}:00 pm to {{ g_names.e_close }}:00 pm</h4>
+
+                <h4><br><u>Owned by:</u></h4>
+                <h4>{{ o_names.first_name }} {{ o_names.last_name }}</h4>
+                <br>
+                <h4><u>Images:</u></h4>
+                <div class="flex-box-containeer-2">
+                    <img src="{{ img_1 }}"><br>
+                    <img src="{{ img_2 }}"><br>
+                    <img src="{{ img_3 }}"><br>
+                    <img src="{{ img_4 }}"><br>
+                    <img src="{{ img_5 }}">
+                </div>
+                <br>
+                {{ owner_name }}
+                <h3><a href="{{ url_for('transaction_select_time',owner_name=g_names.owner_ref) }}">Choose time duration.</a> </h3>
+
+
+                <!--Razor pay api-->
+                <pre>
+
+
+            </pre>
+
+
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <!-- Extra -->
+
+    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="extra_title">More Gyms</div>
+                        <div class="extra_text">
+                            <p>Will be added.</p>
+                        </div>
+                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer_container">
+                        <div class="footer_content">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <div class="logo d-flex flex-row align-items-center justify-content-center">
+                                        <img
+                                                src="/static/images/dot.png" alt="">
+                                        <div>GYMA<span>ale</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <nav class="footer_nav">
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/main">Home</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
