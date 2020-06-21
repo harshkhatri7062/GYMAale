@@ -1,5 +1,4 @@
-# latest commit 31/03/2020
-
+import credentials
 from credentials import *
 from flask import Flask, render_template, flash, redirect, url_for, session, request, g
 from flask_sqlalchemy import SQLAlchemy
@@ -2844,6 +2843,8 @@ def publishing_blog_post():
             else:
                 print('not submitted')
             return render_template('publishing_blog_post.html')
+        return render_template('publishing_blog_post.html')
+    return render_template('publishing_blog_post.html')
 
 
 # it sends the mail to the newletter subscribers about a new blog being published.
@@ -3492,4 +3493,4 @@ admin.add_view(MyModelView(orderUpdate, db.session))
 
 if __name__ == "__main__":
     db.create_all()
-    app.run(debug=True)
+    app.run(debug=False)
