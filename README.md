@@ -29,3 +29,6 @@ By learning with time I solved many of these issues.
 * HTML/CSS
 * Github 
 * SMTP
+___
+* You can find further info and details for the project by clicking the link below.
+https://devfolio.co/submissions/gymaale-3
